@@ -2,8 +2,8 @@ name: swiggy-actions
 on :
  push:
   branches: main
- pullrequest
-  branch: release
+pullrequest:
+   branch: release
 
 
 jobs: 
