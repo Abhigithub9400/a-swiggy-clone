@@ -22,3 +22,6 @@ jobs:
     uses: aquasecurity/trivy-action@0.30.0
     with:
            image-ref: swiggy:latest
+  - name: dockertag  
+    run: |
+        docker tag swiggy:latest abhijithdockerhub/swiggy:latest
