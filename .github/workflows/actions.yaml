@@ -11,13 +11,13 @@ jobs:
   runs-on: ubuntu-latest
   
 steps:
- -name: checkout
+- name: checkout
   uses: actions/checkout@v3
- -name: dockerbuiuld
+- name: dockerbuiuld
   run: |
      docker build -t swiggy:latest
      
- -name: trivy-scan
-   uses: aquasecurity/trivy-action@0.30.0
-   with:
+- name: trivy-scan
+  uses: aquasecurity/trivy-action@0.30.0
+  with:
          image-ref: swiggy:latest
