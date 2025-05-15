@@ -1,23 +1,24 @@
 name: swiggy-actions
+
 on :
  push:
   branches: main
-pullrequest:
-   branch: release
+ pull_request:
+  branches: release
 
 
 jobs: 
  build:
   runs-on: ubuntu-latest
-  
-steps:
-- name: checkout
-  uses: actions/checkout@v3
-- name: dockerbuiuld
-  run: |
-     docker build -t swiggy:latest
-     
-- name: trivy-scan
-  uses: aquasecurity/trivy-action@0.30.0
-  with:
-         image-ref: swiggy:latest
+   
+  steps:
+  - name: checkout
+    uses: actions/checkout@v3
+  - name: dockerbuiuld
+    run: |
+       docker build -t swiggy:latest
+       
+  - name: trivy-scan
+    uses: aquasecurity/trivy-action@0.30.0
+    with:
+           image-ref: swiggy:latest
